@@ -1,0 +1,39 @@
+
+        <div>
+            <label>Contract Number:</label>
+            <input type="text" [(ngModel)]="refNumber"  size="50"/>
+            <button class="btn btn-primary" (click)="search()">Search</button>
+        </div>
+        <hr>
+        <div class="table-responsive" *ngIf="item">
+            <table class="table table-striped">
+                <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse">
+                    <th ><span>Number</span> </th>
+                    <th ><span>Name</span> </th>
+                    <th ><span>SerialNumber</span> </th>
+                    <th ><span>Amount</span> </th>
+                    <th ><span>Amount In Character</span> </th>
+                    <th ><span>supplier TIN Number</span> </th>
+                    <th ><span>supplier Name</span> </th>
+                    <th ></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let contract of item">
+                    <td>{{contract.contractNumber}}</td>
+                    <td>{{contract.contractName}}</td>
+                    <td>{{contract.contractSerialNumber}}</td>
+                    <td>{{contract.contractAmount}}</td>
+                    <td>{{contract.contractAmountCharacter}}</td>
+                    <td>{{contract.supplierTINNumber}}</td>
+                    <td>{{contract.supplierName}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit" id="save-contract" (click)="saveContract(contract)"class="btn btn-primary"><fa-icon [icon]="'save'"></fa-icon></button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>

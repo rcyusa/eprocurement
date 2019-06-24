@@ -1,0 +1,119 @@
+entity Tender {
+	tenderRefNumber String,
+	tenderRefName String,
+	tenderPEName String,
+	tenderPECode String,
+	tenderType String,
+	tenderMethod String,
+	tenderOnOff String,
+	tenderPublicDate LocalDate,
+	tenderReceiveDate LocalDate,
+	tenderDeadLineDate LocalDate,
+	tenderOpenDate LocalDate
+	}
+entity Lot {
+	  lotName String,
+	  lotNumber String,
+	  lotDesc String,
+	  lotAmount Double,
+	  lotCurrancy String,
+	  lotRefNumber String
+	}
+    
+entity Contract {
+contractNumber String,
+contractSerialNumber String,
+contractName String,
+contractAmount String,
+contractAmountCharacter String,
+contractCurrency String,
+contractTotalTaxeAmount String,
+contractTotalTaxeAmountCharacter String,
+contractVatAmount String,
+contractVatRate String,
+contractWhtAmount String,
+contractWhtRate String,
+contractDurationYear String,
+contractDurationMonth String,
+contractDate String,
+contractEffectiveDate String,
+contractWarantyYear String,
+contractWarantyMonth String,
+contractPenaltyDelayRate String,
+contractPenaltyLimitRate String,
+contractManagerName String,
+contractManagerPosition String,
+contractSupervisingFirm String,
+contractPETINNumber String,
+contractPEName String,
+contractPERepresentativeName String,
+contractPETELNumber String,
+contractPEAddress String,
+contractTenderRefNumber String
+    }
+
+entity Policy {
+policyNumber String,
+policyType String,
+policyAmount Double,
+policyAmountChar String,
+policyAmountCurrancy String,
+primeAmount Double,
+policyOperationDate LocalDate,
+policyStartDate LocalDate,
+policyExpirationDate LocalDate,
+policyStatus String,
+policyComment String,
+	}
+    
+entity Client {
+clientName String,
+clientTINNumber String,
+clientAddress String,
+clientPoBox String,
+clientCellPhoneNumber String,
+clientTelNumber String,
+clientEmailAddress String
+}
+
+entity Branch {
+branchName String,
+branchAddress String,
+branchManager String,
+branchPhone String,
+branchFax String,
+branchEmail String
+}
+entity UserExtra {
+phone String
+}
+
+entity Company {
+companyUserName String,
+companyPassWord String,
+companyTINnumber String,
+companyEmail String,
+companyFax String,
+companyPhone String,
+}
+
+relationship OneToMany {
+    Tender{lotByTender} to Lot,
+    Contract{lotByContract} to Lot,
+    Client{PolicyByClient} to Policy,
+    Branch{userByBranch} to UserExtra,
+    UserExtra{policyByUser} to Policy
+}
+
+relationship OneToOne {
+    Policy{lotOnPolicy} to Lot
+    UserExtra{user} to User
+}
+
+dto * with mapstruct
+
+service all with serviceImpl
+
+paginate Tender, Lot, Contract, Policy, Client, Branch, UserExtra with pagination
+
+

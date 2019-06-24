@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-client-heading">Create or edit a Client</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!client.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="client.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_clientName">Client Name</label>
+                    <input type="text" class="form-control" name="clientName" id="field_clientName"
+                        [(ngModel)]="client.clientName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_clientTINNumber">Client TIN Number</label>
+                    <input type="text" class="form-control" name="clientTINNumber" id="field_clientTINNumber"
+                        [(ngModel)]="client.clientTINNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_clientAddress">Client Address</label>
+                    <input type="text" class="form-control" name="clientAddress" id="field_clientAddress"
+                        [(ngModel)]="client.clientAddress" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_clientPoBox">Client Po Box</label>
+                    <input type="text" class="form-control" name="clientPoBox" id="field_clientPoBox"
+                        [(ngModel)]="client.clientPoBox" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_clientCellPhoneNumber">Client Cell Phone Number</label>
+                    <input type="text" class="form-control" name="clientCellPhoneNumber" id="field_clientCellPhoneNumber"
+                        [(ngModel)]="client.clientCellPhoneNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_clientTelNumber">Client Tel Number</label>
+                    <input type="text" class="form-control" name="clientTelNumber" id="field_clientTelNumber"
+                        [(ngModel)]="client.clientTelNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_clientEmailAddress">Client Email Address</label>
+                    <input type="text" class="form-control" name="clientEmailAddress" id="field_clientEmailAddress"
+                        [(ngModel)]="client.clientEmailAddress" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

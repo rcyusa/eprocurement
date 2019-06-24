@@ -1,0 +1,75 @@
+<div >
+    <div >
+        <div>
+            <label>Tender Number:</label>
+            <input type="text" [(ngModel)]="refNumber"  size="50"/>
+            <button class="btn btn-primary" (click)="search()">Search</button>
+        </div>
+        <div *ngIf="item">
+
+
+            <hr>
+
+            <table >
+            <tr *ngFor="let tender of item ">
+            <dl class="row-md jh-entity-details">
+                <dt><span>Tender Ref Number</span> : <span>{{tender.tenderRefNumber}}</span></dt>
+
+                <dt><span>Tender Ref Name</span> : <span>{{tender.tenderRefName}}</span></dt>
+
+                <dt><span>Tender PE Name</span> : <span>{{tender.pename}}</span></dt>
+
+                <dt><span>Tender PE Code</span> :  <span>{{tender.pecode}}</span></dt>
+
+                <dt><span>Tender Type</span> : <span>{{tender.tenderType}}</span></dt>
+
+                <dt><span>Tender Method</span> : <span>{{tender.tenderMethod}}</span></dt>
+
+                <dt><span>Tender On Off</span> : <span>{{tender.onOff}}</span></dt>
+
+                <dt><span>Tender Public Date</span> : <span>{{tender.publicDate}}</span></dt>
+
+                <dt><span>Tender Receive Date</span> :  <span>{{tender.receiveDate}}</span></dt>
+
+                <dt><span>Tender Dead Line Date</span> : <span>{{tender.deadLineDate}}</span></dt>
+
+                <dt><span>Tender Open Date</span> : <span>{{tender.openDate}}</span></dt>
+
+            </dl>
+            </tr>
+            </table>
+            <table class="table table-striped">
+                <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse">
+
+                    <th ><span>Name</span> </th>
+                    <th ><span>Number</span> </th>
+                    <th ><span>Description</span> </th>
+                    <th ><span>Amount</span> </th>
+                    <th ><span>Currency</span> </th>
+                    <th ><span>Open Date</span> </th>
+                    <th ><span>Tender</span> </th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let lot of item[0].tenderLOTInfo">
+
+                    <td>{{lot.tenderLotName}}</td>
+                    <td>{{lot.tenderLotNumber}}</td>
+                    <td>{{lot.tenderLotDesc}}</td>
+                    <td>{{lot.amount}}</td>
+                    <td>{{lot.unit}}</td>
+                    <td>{{item[0].openDate }}</td>
+                    <td>{{item[0].tenderRefNumber}}</td>
+                    <td>
+                    <button type="submit" id="save-lot" (click)="save_lot(lot.tenderLotName,lot.tenderLotNumber,lot.tenderLotDesc,lot.amount,lot.unit,item[0].tenderRefNumber)"class="btn btn-primary"><fa-icon [icon]="'save'"></fa-icon></button>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

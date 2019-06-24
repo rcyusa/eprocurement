@@ -1,0 +1,138 @@
+{
+    "name": "Contract",
+    "fields": [
+        {
+            "fieldName": "contractNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractSerialNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractAmount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractAmountCharacter",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractCurrency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractTotalTaxeAmount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractTotalTaxeAmountCharacter",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractVatAmount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractVatRate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractWhtAmount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractWhtRate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractDurationYear",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractDurationMonth",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractEffectiveDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractWarantyYear",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractWarantyMonth",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractPenaltyDelayRate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractPenaltyLimitRate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractManagerName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractManagerPosition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractSupervisingFirm",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractPETINNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractPEName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractPERepresentativeName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractPETELNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractPEAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contractTenderRefNumber",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "lot",
+            "otherEntityRelationshipName": "contract",
+            "relationshipName": "lotByContract"
+        }
+    ],
+    "changelogDate": "20190417102200",
+    "entityTableName": "contract",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

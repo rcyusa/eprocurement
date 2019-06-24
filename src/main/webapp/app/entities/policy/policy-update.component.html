@@ -1,0 +1,148 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-policy-heading">Create or edit a Policy</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!policy.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                           [(ngModel)]="policy.id" readonly/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_policyNumber">Policy Number</label>
+                    <input type="text" class="form-control" name="policyNumber" id="field_policyNumber"
+                           [(ngModel)]="policy.policyNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_policyType">Policy Type</label>
+                    <select class="form-control" id="field_policyType" name="policyType"
+                            [(ngModel)]="policy.policyType">
+                        <option value="null"></option>
+                        <option value="Bid">Bid Security</option>
+                        <option value="Performance">Performance Security</option>
+                        <option value="Advanced">Advanced Payment</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lotOnPolicy">Lot On Policy</label>
+                    <select class="form-control" id="field_lotOnPolicy" name="lotOnPolicy" (change)="get_Detail()"
+                            [(ngModel)]="policy.lotOnPolicyId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="lotOption.id" *ngFor="let lotOption of lotonpolicies; trackBy: trackLotById">
+                            {{lotOption.lotName}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_policyAmount">Policy Amount</label>
+                    <input type="number" class="form-control" name="policyAmount" id="field_policyAmount"
+                           [(ngModel)]="policy.policyAmount"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_policyAmountChar">Policy Amount Char</label>
+                    <input type="text" class="form-control" name="policyAmountChar" id="field_policyAmountChar"
+                           [(ngModel)]="policy.policyAmountChar"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_policyAmountCurrancy">Policy Amount Currancy</label>
+                    <input type="text" class="form-control" name="policyAmountCurrancy" id="field_policyAmountCurrancy"
+                           [(ngModel)]="policy.policyAmountCurrancy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_primeAmount">Prime Amount</label>
+                    <input type="number" class="form-control" name="primeAmount" id="field_primeAmount"
+                           [(ngModel)]="policy.primeAmount"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_policyOperationDate">Policy Operation Date</label>
+                    <div class="input-group">
+                        <input id="field_policyOperationDate" type="text" class="form-control"
+                               name="policyOperationDate" ngbDatepicker #policyOperationDateDp="ngbDatepicker"
+                               [(ngModel)]="policy.policyOperationDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="policyOperationDateDp.toggle()"><fa-icon
+                                    [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_policyStartDate">Policy Start Date</label>
+                    <div class="input-group">
+                        <input id="field_policyStartDate" type="text" class="form-control" name="policyStartDate"
+                               ngbDatepicker #policyStartDateDp="ngbDatepicker" [(ngModel)]="policy.policyStartDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary"
+                                    (click)="policyStartDateDp.toggle()"><fa-icon
+                                    [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_policyExpirationDate">Policy Expiration Date</label>
+                    <div class="input-group">
+                        <input id="field_policyExpirationDate" type="text" class="form-control"
+                               name="policyExpirationDate" ngbDatepicker #policyExpirationDateDp="ngbDatepicker"
+                               [(ngModel)]="policy.policyExpirationDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="policyExpirationDateDp.toggle()"><fa-icon
+                                    [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_policyStatus">Policy Status</label>
+                    <select class="form-control" id="field_policyStatus" name="policyStatus"
+                            [(ngModel)]="policy.policyStatus">
+                        <option value="null"></option>
+                        <option value="VALID">VALID</option>
+                        <option value="EXPIRED">EXPIRED</option>
+                        <option value="TO BE SEIZED">TO BE SEIZED</option>
+                        <option value="SIZED">EXPIRED</option>
+                        <option value="CANCELED">CANCELED</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_policyComment">Policy Comment</label>
+                    <textarea type="text" class="form-control" name="policyComment" id="field_policyComment"
+                           [(ngModel)]="policy.policyComment"></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_client">Client</label>
+                    <select class="form-control" id="field_client" name="client" [(ngModel)]="policy.clientId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientOption.id"
+                                *ngFor="let clientOption of clients; trackBy: trackClientById">{{clientOption.id}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_userExtra">User Extra</label>
+                    <select class="form-control" id="field_userExtra" name="userExtra" [(ngModel)]="policy.userExtraId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userExtraOption.id"
+                                *ngFor="let userExtraOption of userextras; trackBy: trackUserExtraById">
+                            {{userExtraOption.id}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                        class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

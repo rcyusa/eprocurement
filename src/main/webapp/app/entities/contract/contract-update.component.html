@@ -1,0 +1,169 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-contract-heading">Create or edit a Contract</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!contract.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="contract.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractNumber">Contract Number</label>
+                    <input type="text" class="form-control" name="contractNumber" id="field_contractNumber"
+                        [(ngModel)]="contract.contractNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractSerialNumber">Contract Serial Number</label>
+                    <input type="text" class="form-control" name="contractSerialNumber" id="field_contractSerialNumber"
+                        [(ngModel)]="contract.contractSerialNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractName">Contract Name</label>
+                    <input type="text" class="form-control" name="contractName" id="field_contractName"
+                        [(ngModel)]="contract.contractName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractAmount">Contract Amount</label>
+                    <input type="text" class="form-control" name="contractAmount" id="field_contractAmount"
+                        [(ngModel)]="contract.contractAmount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractAmountCharacter">Contract Amount Character</label>
+                    <input type="text" class="form-control" name="contractAmountCharacter" id="field_contractAmountCharacter"
+                        [(ngModel)]="contract.contractAmountCharacter" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractCurrency">Contract Currency</label>
+                    <input type="text" class="form-control" name="contractCurrency" id="field_contractCurrency"
+                        [(ngModel)]="contract.contractCurrency" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractTotalTaxeAmount">Contract Total Taxe Amount</label>
+                    <input type="text" class="form-control" name="contractTotalTaxeAmount" id="field_contractTotalTaxeAmount"
+                        [(ngModel)]="contract.contractTotalTaxeAmount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractTotalTaxeAmountCharacter">Contract Total Taxe Amount Character</label>
+                    <input type="text" class="form-control" name="contractTotalTaxeAmountCharacter" id="field_contractTotalTaxeAmountCharacter"
+                        [(ngModel)]="contract.contractTotalTaxeAmountCharacter" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractVatAmount">Contract Vat Amount</label>
+                    <input type="text" class="form-control" name="contractVatAmount" id="field_contractVatAmount"
+                        [(ngModel)]="contract.contractVatAmount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractVatRate">Contract Vat Rate</label>
+                    <input type="text" class="form-control" name="contractVatRate" id="field_contractVatRate"
+                        [(ngModel)]="contract.contractVatRate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractWhtAmount">Contract Wht Amount</label>
+                    <input type="text" class="form-control" name="contractWhtAmount" id="field_contractWhtAmount"
+                        [(ngModel)]="contract.contractWhtAmount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractWhtRate">Contract Wht Rate</label>
+                    <input type="text" class="form-control" name="contractWhtRate" id="field_contractWhtRate"
+                        [(ngModel)]="contract.contractWhtRate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractDurationYear">Contract Duration Year</label>
+                    <input type="text" class="form-control" name="contractDurationYear" id="field_contractDurationYear"
+                        [(ngModel)]="contract.contractDurationYear" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractDurationMonth">Contract Duration Month</label>
+                    <input type="text" class="form-control" name="contractDurationMonth" id="field_contractDurationMonth"
+                        [(ngModel)]="contract.contractDurationMonth" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractDate">Contract Date</label>
+                    <input type="text" class="form-control" name="contractDate" id="field_contractDate"
+                        [(ngModel)]="contract.contractDate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractEffectiveDate">Contract Effective Date</label>
+                    <input type="text" class="form-control" name="contractEffectiveDate" id="field_contractEffectiveDate"
+                        [(ngModel)]="contract.contractEffectiveDate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractWarantyYear">Contract Waranty Year</label>
+                    <input type="text" class="form-control" name="contractWarantyYear" id="field_contractWarantyYear"
+                        [(ngModel)]="contract.contractWarantyYear" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractWarantyMonth">Contract Waranty Month</label>
+                    <input type="text" class="form-control" name="contractWarantyMonth" id="field_contractWarantyMonth"
+                        [(ngModel)]="contract.contractWarantyMonth" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractPenaltyDelayRate">Contract Penalty Delay Rate</label>
+                    <input type="text" class="form-control" name="contractPenaltyDelayRate" id="field_contractPenaltyDelayRate"
+                        [(ngModel)]="contract.contractPenaltyDelayRate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractPenaltyLimitRate">Contract Penalty Limit Rate</label>
+                    <input type="text" class="form-control" name="contractPenaltyLimitRate" id="field_contractPenaltyLimitRate"
+                        [(ngModel)]="contract.contractPenaltyLimitRate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractManagerName">Contract Manager Name</label>
+                    <input type="text" class="form-control" name="contractManagerName" id="field_contractManagerName"
+                        [(ngModel)]="contract.contractManagerName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractManagerPosition">Contract Manager Position</label>
+                    <input type="text" class="form-control" name="contractManagerPosition" id="field_contractManagerPosition"
+                        [(ngModel)]="contract.contractManagerPosition" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractSupervisingFirm">Contract Supervising Firm</label>
+                    <input type="text" class="form-control" name="contractSupervisingFirm" id="field_contractSupervisingFirm"
+                        [(ngModel)]="contract.contractSupervisingFirm" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractPETINNumber">Contract PETIN Number</label>
+                    <input type="text" class="form-control" name="contractPETINNumber" id="field_contractPETINNumber"
+                        [(ngModel)]="contract.contractPETINNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractPEName">Contract PE Name</label>
+                    <input type="text" class="form-control" name="contractPEName" id="field_contractPEName"
+                        [(ngModel)]="contract.contractPEName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractPERepresentativeName">Contract PE Representative Name</label>
+                    <input type="text" class="form-control" name="contractPERepresentativeName" id="field_contractPERepresentativeName"
+                        [(ngModel)]="contract.contractPERepresentativeName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractPETELNumber">Contract PETEL Number</label>
+                    <input type="text" class="form-control" name="contractPETELNumber" id="field_contractPETELNumber"
+                        [(ngModel)]="contract.contractPETELNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractPEAddress">Contract PE Address</label>
+                    <input type="text" class="form-control" name="contractPEAddress" id="field_contractPEAddress"
+                        [(ngModel)]="contract.contractPEAddress" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contractTenderRefNumber">Contract Tender Ref Number</label>
+                    <input type="text" class="form-control" name="contractTenderRefNumber" id="field_contractTenderRefNumber"
+                        [(ngModel)]="contract.contractTenderRefNumber" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

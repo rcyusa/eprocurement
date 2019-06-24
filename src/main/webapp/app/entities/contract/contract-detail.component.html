@@ -1,0 +1,139 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contract">
+            <h2><span>Contract</span> {{contract.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Contract Number</span></dt>
+                <dd>
+                    <span>{{contract.contractNumber}}</span>
+                </dd>
+                <dt><span>Contract Serial Number</span></dt>
+                <dd>
+                    <span>{{contract.contractSerialNumber}}</span>
+                </dd>
+                <dt><span>Contract Name</span></dt>
+                <dd>
+                    <span>{{contract.contractName}}</span>
+                </dd>
+                <dt><span>Contract Amount</span></dt>
+                <dd>
+                    <span>{{contract.contractAmount}}</span>
+                </dd>
+                <dt><span>Contract Amount Character</span></dt>
+                <dd>
+                    <span>{{contract.contractAmountCharacter}}</span>
+                </dd>
+                <dt><span>Contract Currency</span></dt>
+                <dd>
+                    <span>{{contract.contractCurrency}}</span>
+                </dd>
+                <dt><span>Contract Total Taxe Amount</span></dt>
+                <dd>
+                    <span>{{contract.contractTotalTaxeAmount}}</span>
+                </dd>
+                <dt><span>Contract Total Taxe Amount Character</span></dt>
+                <dd>
+                    <span>{{contract.contractTotalTaxeAmountCharacter}}</span>
+                </dd>
+                <dt><span>Contract Vat Amount</span></dt>
+                <dd>
+                    <span>{{contract.contractVatAmount}}</span>
+                </dd>
+                <dt><span>Contract Vat Rate</span></dt>
+                <dd>
+                    <span>{{contract.contractVatRate}}</span>
+                </dd>
+                <dt><span>Contract Wht Amount</span></dt>
+                <dd>
+                    <span>{{contract.contractWhtAmount}}</span>
+                </dd>
+                <dt><span>Contract Wht Rate</span></dt>
+                <dd>
+                    <span>{{contract.contractWhtRate}}</span>
+                </dd>
+                <dt><span>Contract Duration Year</span></dt>
+                <dd>
+                    <span>{{contract.contractDurationYear}}</span>
+                </dd>
+                <dt><span>Contract Duration Month</span></dt>
+                <dd>
+                    <span>{{contract.contractDurationMonth}}</span>
+                </dd>
+                <dt><span>Contract Date</span></dt>
+                <dd>
+                    <span>{{contract.contractDate}}</span>
+                </dd>
+                <dt><span>Contract Effective Date</span></dt>
+                <dd>
+                    <span>{{contract.contractEffectiveDate}}</span>
+                </dd>
+                <dt><span>Contract Waranty Year</span></dt>
+                <dd>
+                    <span>{{contract.contractWarantyYear}}</span>
+                </dd>
+                <dt><span>Contract Waranty Month</span></dt>
+                <dd>
+                    <span>{{contract.contractWarantyMonth}}</span>
+                </dd>
+                <dt><span>Contract Penalty Delay Rate</span></dt>
+                <dd>
+                    <span>{{contract.contractPenaltyDelayRate}}</span>
+                </dd>
+                <dt><span>Contract Penalty Limit Rate</span></dt>
+                <dd>
+                    <span>{{contract.contractPenaltyLimitRate}}</span>
+                </dd>
+                <dt><span>Contract Manager Name</span></dt>
+                <dd>
+                    <span>{{contract.contractManagerName}}</span>
+                </dd>
+                <dt><span>Contract Manager Position</span></dt>
+                <dd>
+                    <span>{{contract.contractManagerPosition}}</span>
+                </dd>
+                <dt><span>Contract Supervising Firm</span></dt>
+                <dd>
+                    <span>{{contract.contractSupervisingFirm}}</span>
+                </dd>
+                <dt><span>Contract PETIN Number</span></dt>
+                <dd>
+                    <span>{{contract.contractPETINNumber}}</span>
+                </dd>
+                <dt><span>Contract PE Name</span></dt>
+                <dd>
+                    <span>{{contract.contractPEName}}</span>
+                </dd>
+                <dt><span>Contract PE Representative Name</span></dt>
+                <dd>
+                    <span>{{contract.contractPERepresentativeName}}</span>
+                </dd>
+                <dt><span>Contract PETEL Number</span></dt>
+                <dd>
+                    <span>{{contract.contractPETELNumber}}</span>
+                </dd>
+                <dt><span>Contract PE Address</span></dt>
+                <dd>
+                    <span>{{contract.contractPEAddress}}</span>
+                </dd>
+                <dt><span>Contract Tender Ref Number</span></dt>
+                <dd>
+                    <span>{{contract.contractTenderRefNumber}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contract', contract.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

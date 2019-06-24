@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Contract.
+    -->
+    <changeSet id="20190417102200-1" author="jhipster">
+        <createTable tableName="contract">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="contract_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_serial_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_amount" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_amount_character" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_currency" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_total_taxe_amount" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_total_taxe_amount_character" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_vat_amount" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_vat_rate" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_wht_amount" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_wht_rate" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_duration_year" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_duration_month" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_date" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_effective_date" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_waranty_year" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_waranty_month" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_penalty_delay_rate" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_penalty_limit_rate" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_manager_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_manager_position" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_supervising_firm" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_petin_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_pe_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_pe_representative_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_petel_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_pe_address" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contract_tender_ref_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

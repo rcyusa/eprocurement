@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-tender-heading">Create or edit a Tender</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!tender.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="tender.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderRefNumber">Tender Ref Number</label>
+                    <input type="text" class="form-control" name="tenderRefNumber" id="field_tenderRefNumber"
+                        [(ngModel)]="tender.tenderRefNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderRefName">Tender Ref Name</label>
+                    <input type="text" class="form-control" name="tenderRefName" id="field_tenderRefName"
+                        [(ngModel)]="tender.tenderRefName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderPEName">Tender PE Name</label>
+                    <input type="text" class="form-control" name="tenderPEName" id="field_tenderPEName"
+                        [(ngModel)]="tender.tenderPEName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderPECode">Tender PE Code</label>
+                    <input type="text" class="form-control" name="tenderPECode" id="field_tenderPECode"
+                        [(ngModel)]="tender.tenderPECode" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderType">Tender Type</label>
+                    <input type="text" class="form-control" name="tenderType" id="field_tenderType"
+                        [(ngModel)]="tender.tenderType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderMethod">Tender Method</label>
+                    <input type="text" class="form-control" name="tenderMethod" id="field_tenderMethod"
+                        [(ngModel)]="tender.tenderMethod" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderOnOff">Tender On Off</label>
+                    <input type="text" class="form-control" name="tenderOnOff" id="field_tenderOnOff"
+                        [(ngModel)]="tender.tenderOnOff" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderPublicDate">Tender Public Date</label>
+                    <div class="input-group">
+                        <input id="field_tenderPublicDate" type="text" class="form-control" name="tenderPublicDate" ngbDatepicker  #tenderPublicDateDp="ngbDatepicker" [(ngModel)]="tender.tenderPublicDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="tenderPublicDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderReceiveDate">Tender Receive Date</label>
+                    <div class="input-group">
+                        <input id="field_tenderReceiveDate" type="text" class="form-control" name="tenderReceiveDate" ngbDatepicker  #tenderReceiveDateDp="ngbDatepicker" [(ngModel)]="tender.tenderReceiveDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="tenderReceiveDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderDeadLineDate">Tender Dead Line Date</label>
+                    <div class="input-group">
+                        <input id="field_tenderDeadLineDate" type="text" class="form-control" name="tenderDeadLineDate" ngbDatepicker  #tenderDeadLineDateDp="ngbDatepicker" [(ngModel)]="tender.tenderDeadLineDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="tenderDeadLineDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenderOpenDate">Tender Open Date</label>
+                    <div class="input-group">
+                        <input id="field_tenderOpenDate" type="text" class="form-control" name="tenderOpenDate" ngbDatepicker  #tenderOpenDateDp="ngbDatepicker" [(ngModel)]="tender.tenderOpenDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="tenderOpenDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

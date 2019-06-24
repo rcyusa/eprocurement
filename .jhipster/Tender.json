@@ -1,0 +1,66 @@
+{
+    "name": "Tender",
+    "fields": [
+        {
+            "fieldName": "tenderRefNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenderRefName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenderPEName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenderPECode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenderType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenderMethod",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenderOnOff",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenderPublicDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "tenderReceiveDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "tenderDeadLineDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "tenderOpenDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "lot",
+            "otherEntityRelationshipName": "tender",
+            "relationshipName": "lotByTender"
+        }
+    ],
+    "changelogDate": "20190417102158",
+    "entityTableName": "tender",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

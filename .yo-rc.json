@@ -1,0 +1,35 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "rw.co.snw"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "eprocurement",
+        "packageName": "rw.co.snw",
+        "packageFolder": "rw/co/snw",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Memory",
+        "prodDatabaseType": "mariadb",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "M2QwMDY0MTUwZmFhZWU3NzA3ODViZWJiYjMwNzNjYTY5Y2Y3N2E4MjEzYmIzMzM3MGQ1ODA2ZTcyOWQ1ODE1MmU5YzM3MGU2N2JjYmQ2NzZlMzZlZDY3OGNmMGM3NWMzYjk4ZjY5ODFmNzRkZWJhYzc1MjU1MzM5ZjI1ZDBiYzU=",
+        "clientFramework": "angularX",
+        "useSass": false,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": false
+    }
+}

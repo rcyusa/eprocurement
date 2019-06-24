@@ -1,0 +1,124 @@
+<div>
+    <h2 id="page-heading">
+        <span>Contracts</span>
+        <button id="jh-search-entity" class="btn btn-primary float-center jh-search-entity search-tender" [routerLink]="['/contract/consult']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Search Contract
+            </span>
+        </button>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-contract" [routerLink]="['/contract/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Contract
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="contracts">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractNumber"><span>Contract Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractSerialNumber"><span>Contract Serial Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractName"><span>Contract Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractAmount"><span>Contract Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractAmountCharacter"><span>Contract Amount Character</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractCurrency"><span>Contract Currency</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractTotalTaxeAmount"><span>Contract Total Taxe Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractTotalTaxeAmountCharacter"><span>Contract Total Taxe Amount Character</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractVatAmount"><span>Contract Vat Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractVatRate"><span>Contract Vat Rate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractWhtAmount"><span>Contract Wht Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractWhtRate"><span>Contract Wht Rate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractDurationYear"><span>Contract Duration Year</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractDurationMonth"><span>Contract Duration Month</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractDate"><span>Contract Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractEffectiveDate"><span>Contract Effective Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractWarantyYear"><span>Contract Waranty Year</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractWarantyMonth"><span>Contract Waranty Month</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractPenaltyDelayRate"><span>Contract Penalty Delay Rate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractPenaltyLimitRate"><span>Contract Penalty Limit Rate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractManagerName"><span>Contract Manager Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractManagerPosition"><span>Contract Manager Position</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractSupervisingFirm"><span>Contract Supervising Firm</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractPETINNumber"><span>Contract PETIN Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractPEName"><span>Contract PE Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractPERepresentativeName"><span>Contract PE Representative Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractPETELNumber"><span>Contract PETEL Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractPEAddress"><span>Contract PE Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contractTenderRefNumber"><span>Contract Tender Ref Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let contract of contracts ;trackBy: trackId">
+                <td><a [routerLink]="['/contract', contract.id, 'view' ]">{{contract.id}}</a></td>
+                <td>{{contract.contractNumber}}</td>
+                <td>{{contract.contractSerialNumber}}</td>
+                <td>{{contract.contractName}}</td>
+                <td>{{contract.contractAmount}}</td>
+                <td>{{contract.contractAmountCharacter}}</td>
+                <td>{{contract.contractCurrency}}</td>
+                <td>{{contract.contractTotalTaxeAmount}}</td>
+                <td>{{contract.contractTotalTaxeAmountCharacter}}</td>
+                <td>{{contract.contractVatAmount}}</td>
+                <td>{{contract.contractVatRate}}</td>
+                <td>{{contract.contractWhtAmount}}</td>
+                <td>{{contract.contractWhtRate}}</td>
+                <td>{{contract.contractDurationYear}}</td>
+                <td>{{contract.contractDurationMonth}}</td>
+                <td>{{contract.contractDate}}</td>
+                <td>{{contract.contractEffectiveDate}}</td>
+                <td>{{contract.contractWarantyYear}}</td>
+                <td>{{contract.contractWarantyMonth}}</td>
+                <td>{{contract.contractPenaltyDelayRate}}</td>
+                <td>{{contract.contractPenaltyLimitRate}}</td>
+                <td>{{contract.contractManagerName}}</td>
+                <td>{{contract.contractManagerPosition}}</td>
+                <td>{{contract.contractSupervisingFirm}}</td>
+                <td>{{contract.contractPETINNumber}}</td>
+                <td>{{contract.contractPEName}}</td>
+                <td>{{contract.contractPERepresentativeName}}</td>
+                <td>{{contract.contractPETELNumber}}</td>
+                <td>{{contract.contractPEAddress}}</td>
+                <td>{{contract.contractTenderRefNumber}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/contract', contract.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/contract', contract.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'contract', { outlets: { popup: contract.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="contracts && contracts.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{
+    "name": "Company",
+    "fields": [
+        {
+            "fieldName": "companyUserName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyPassWord",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyTINnumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyFax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyPhone",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190417102205",
+    "entityTableName": "company",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

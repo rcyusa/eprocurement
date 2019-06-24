@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="policy">
+            <h2><span>Policy</span> {{policy.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Policy Number</span></dt>
+                <dd>
+                    <span>{{policy.policyNumber}}</span>
+                </dd>
+                <dt><span>Policy Type</span></dt>
+                <dd>
+                    <span>{{policy.policyType}}</span>
+                </dd>
+                <dt><span>Policy Amount</span></dt>
+                <dd>
+                    <span>{{policy.policyAmount}}</span>
+                </dd>
+                <dt><span>Policy Amount Char</span></dt>
+                <dd>
+                    <span>{{policy.policyAmountChar}}</span>
+                </dd>
+                <dt><span>Policy Amount Currancy</span></dt>
+                <dd>
+                    <span>{{policy.policyAmountCurrancy}}</span>
+                </dd>
+                <dt><span>Prime Amount</span></dt>
+                <dd>
+                    <span>{{policy.primeAmount}}</span>
+                </dd>
+                <dt><span>Policy Operation Date</span></dt>
+                <dd>
+                    <span>{{policy.policyOperationDate}}</span>
+                </dd>
+                <dt><span>Policy Start Date</span></dt>
+                <dd>
+                    <span>{{policy.policyStartDate}}</span>
+                </dd>
+                <dt><span>Policy Expiration Date</span></dt>
+                <dd>
+                    <span>{{policy.policyExpirationDate}}</span>
+                </dd>
+                <dt><span>Policy Status</span></dt>
+                <dd>
+                    <span>{{policy.policyStatus}}</span>
+                </dd>
+                <dt><span>Policy Comment</span></dt>
+                <dd>
+                    <span>{{policy.policyComment}}</span>
+                </dd>
+                <dt><span>Lot On Policy</span></dt>
+                <dd>
+                    <div *ngIf="policy.lotOnPolicyId">
+                        <a [routerLink]="['/lot', policy.lotOnPolicyId, 'view']">{{policy.lotOnPolicyId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Client</span></dt>
+                <dd>
+                    <div *ngIf="policy.clientId">
+                        <a [routerLink]="['/client', policy.clientId, 'view']">{{policy.clientId}}</a>
+                    </div>
+                </dd>
+                <dt><span>User Extra</span></dt>
+                <dd>
+                    <div *ngIf="policy.userExtraId">
+                        <a [routerLink]="['/user-extra', policy.userExtraId, 'view']">{{policy.userExtraId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/policy', policy.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+{
+    "name": "Lot",
+    "fields": [
+        {
+            "fieldName": "lotName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lotNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lotDesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lotAmount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "lotCurrancy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lotRefNumber",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "tender",
+            "otherEntityName": "tender",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "contract",
+            "otherEntityName": "contract",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190417102159",
+    "entityTableName": "lot",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

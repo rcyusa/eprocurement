@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-lot-heading">Create or edit a Lot</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!lot.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="lot.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lotName">Lot Name</label>
+                    <input type="text" class="form-control" name="lotName" id="field_lotName"
+                        [(ngModel)]="lot.lotName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lotNumber">Lot Number</label>
+                    <input type="text" class="form-control" name="lotNumber" id="field_lotNumber"
+                        [(ngModel)]="lot.lotNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lotDesc">Lot Desc</label>
+                    <input type="text" class="form-control" name="lotDesc" id="field_lotDesc"
+                        [(ngModel)]="lot.lotDesc" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lotAmount">Lot Amount</label>
+                    <input type="number" class="form-control" name="lotAmount" id="field_lotAmount"
+                        [(ngModel)]="lot.lotAmount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lotCurrancy">Lot Currancy</label>
+                    <input type="text" class="form-control" name="lotCurrancy" id="field_lotCurrancy"
+                        [(ngModel)]="lot.lotCurrancy" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lotRefNumber">Lot Ref Number</label>
+                    <input type="text" class="form-control" name="lotRefNumber" id="field_lotRefNumber"
+                        [(ngModel)]="lot.lotRefNumber" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tender">Tender</label>
+                    <select class="form-control" id="field_tender" name="tender" [(ngModel)]="lot.tenderId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tenderOption.id" *ngFor="let tenderOption of tenders; trackBy: trackTenderById">{{tenderOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contract">Contract</label>
+                    <select class="form-control" id="field_contract" name="contract" [(ngModel)]="lot.contractId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contractOption.id" *ngFor="let contractOption of contracts; trackBy: trackContractById">{{contractOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="company">
+            <h2><span>Company</span> {{company.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Company User Name</span></dt>
+                <dd>
+                    <span>{{company.companyUserName}}</span>
+                </dd>
+                <dt><span>Company Pass Word</span></dt>
+                <dd>
+                    <span>{{company.companyPassWord}}</span>
+                </dd>
+                <dt><span>Company TI Nnumber</span></dt>
+                <dd>
+                    <span>{{company.companyTINnumber}}</span>
+                </dd>
+                <dt><span>Company Email</span></dt>
+                <dd>
+                    <span>{{company.companyEmail}}</span>
+                </dd>
+                <dt><span>Company Fax</span></dt>
+                <dd>
+                    <span>{{company.companyFax}}</span>
+                </dd>
+                <dt><span>Company Phone</span></dt>
+                <dd>
+                    <span>{{company.companyPhone}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/company', company.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

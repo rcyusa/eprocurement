@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="branch">
+            <h2><span>Branch</span> {{branch.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Branch Name</span></dt>
+                <dd>
+                    <span>{{branch.branchName}}</span>
+                </dd>
+                <dt><span>Branch Address</span></dt>
+                <dd>
+                    <span>{{branch.branchAddress}}</span>
+                </dd>
+                <dt><span>Branch Manager</span></dt>
+                <dd>
+                    <span>{{branch.branchManager}}</span>
+                </dd>
+                <dt><span>Branch Phone</span></dt>
+                <dd>
+                    <span>{{branch.branchPhone}}</span>
+                </dd>
+                <dt><span>Branch Fax</span></dt>
+                <dd>
+                    <span>{{branch.branchFax}}</span>
+                </dd>
+                <dt><span>Branch Email</span></dt>
+                <dd>
+                    <span>{{branch.branchEmail}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/branch', branch.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

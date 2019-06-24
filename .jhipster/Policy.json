@@ -1,0 +1,80 @@
+{
+    "name": "Policy",
+    "fields": [
+        {
+            "fieldName": "policyNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "policyType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "policyAmount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "policyAmountChar",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "policyAmountCurrancy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "primeAmount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "policyOperationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "policyStartDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "policyExpirationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "policyStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "policyComment",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "lot",
+            "otherEntityRelationshipName": "policy",
+            "relationshipName": "lotOnPolicy",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "userExtra",
+            "otherEntityName": "userExtra",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190417102201",
+    "entityTableName": "policy",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

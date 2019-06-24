@@ -1,0 +1,46 @@
+{
+    "name": "Branch",
+    "fields": [
+        {
+            "fieldName": "branchName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "branchAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "branchManager",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "branchPhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "branchFax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "branchEmail",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "userExtra",
+            "otherEntityRelationshipName": "branch",
+            "relationshipName": "userByBranch"
+        }
+    ],
+    "changelogDate": "20190417102203",
+    "entityTableName": "branch",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

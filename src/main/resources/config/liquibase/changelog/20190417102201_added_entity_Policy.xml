@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Policy.
+    -->
+    <changeSet id="20190417102201-1" author="jhipster">
+        <createTable tableName="policy">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="policy_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="policy_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="policy_amount" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="policy_amount_char" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="policy_amount_currancy" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prime_amount" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="policy_operation_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="policy_start_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="policy_expiration_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="policy_status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="policy_comment" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lot_on_policy_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_policy_lot_on_policy_id" />
+            </column>
+            <column name="client_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="user_extra_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

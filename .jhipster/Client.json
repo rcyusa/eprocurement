@@ -1,0 +1,50 @@
+{
+    "name": "Client",
+    "fields": [
+        {
+            "fieldName": "clientName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clientTINNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clientAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clientPoBox",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clientCellPhoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clientTelNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clientEmailAddress",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "policy",
+            "otherEntityRelationshipName": "client",
+            "relationshipName": "policyByClient"
+        }
+    ],
+    "changelogDate": "20190417102202",
+    "entityTableName": "client",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tender">
+            <h2><span>Tender</span> {{tender.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Tender Ref Number</span></dt>
+                <dd>
+                    <span>{{tender.tenderRefNumber}}</span>
+                </dd>
+                <dt><span>Tender Ref Name</span></dt>
+                <dd>
+                    <span>{{tender.tenderRefName}}</span>
+                </dd>
+                <dt><span>Tender PE Name</span></dt>
+                <dd>
+                    <span>{{tender.tenderPEName}}</span>
+                </dd>
+                <dt><span>Tender PE Code</span></dt>
+                <dd>
+                    <span>{{tender.tenderPECode}}</span>
+                </dd>
+                <dt><span>Tender Type</span></dt>
+                <dd>
+                    <span>{{tender.tenderType}}</span>
+                </dd>
+                <dt><span>Tender Method</span></dt>
+                <dd>
+                    <span>{{tender.tenderMethod}}</span>
+                </dd>
+                <dt><span>Tender On Off</span></dt>
+                <dd>
+                    <span>{{tender.tenderOnOff}}</span>
+                </dd>
+                <dt><span>Tender Public Date</span></dt>
+                <dd>
+                    <span>{{tender.tenderPublicDate}}</span>
+                </dd>
+                <dt><span>Tender Receive Date</span></dt>
+                <dd>
+                    <span>{{tender.tenderReceiveDate}}</span>
+                </dd>
+                <dt><span>Tender Dead Line Date</span></dt>
+                <dd>
+                    <span>{{tender.tenderDeadLineDate}}</span>
+                </dd>
+                <dt><span>Tender Open Date</span></dt>
+                <dd>
+                    <span>{{tender.tenderOpenDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tender', tender.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
